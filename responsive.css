@@ -1,0 +1,15 @@
+/* Responsive refinements: phones, tablets, desktops and landscape screens */
+html{max-width:100%;overflow-x:clip}
+body{min-width:0;max-width:100%;overflow-x:clip}
+img,svg,video,canvas,iframe{max-width:100%}
+.section-wrap,.site-footer{width:min(var(--max),calc(100% - clamp(28px,6vw,64px)))}
+.site-header{max-width:calc(100% - 20px)}
+.hero,.about-layout,.wellness-feature,.contact-layout,.project-grid,.principle-grid,.about-details,.service-row,.form-grid{min-width:0}
+.hero-copy,.hero-visual,.about-body,.wellness-copy,.contact-side,.inquiry-form,.project-card,.project-meta,.cap-main{min-width:0}
+.project-meta p,.cap-main p,.division-intro,.hero-lede,.about-body p{overflow-wrap:anywhere}
+@media(max-width:1024px){.hero{gap:clamp(20px,3vw,36px)}.nav-link{padding-inline:8px}.capability{grid-template-columns:32px minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:820px){.hero{grid-template-columns:minmax(0,1fr)}.hero-copy,.hero-visual{width:100%}.about-layout,.contact-layout{grid-template-columns:minmax(0,1fr)}.division-heading,.projects-heading{min-width:0}.site-footer{grid-template-columns:minmax(0,1fr) auto}}
+@media(max-width:640px){.section-pad{padding-block:clamp(58px,12vw,76px)}.hero{padding-top:115px;gap:25px}.hero h1{font-size:clamp(35px,10.7vw,58px)}.hero-actions{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero-actions .button{min-width:0}.hero-visual{height:clamp(265px,78vw,350px)}.principle-grid,.about-details,.service-row,.project-grid,.form-grid{grid-template-columns:minmax(0,1fr)}.service-item{border-right:0}.capability{grid-template-columns:25px minmax(0,1fr)}.cap-main,.cap-tags,.cap-state{grid-column:2;min-width:0}.project-wide{grid-column:auto}.project-cover,.project-wide .project-cover{height:clamp(230px,68vw,300px)}.project-meta{gap:10px}.project-meta>div{min-width:0}.field,.full-field{grid-column:1;min-width:0}.form-actions{align-items:flex-start}.form-helper{max-width:100%;overflow-wrap:anywhere}}
+@media(max-width:360px){.hero h1{font-size:35px}.hero-actions{grid-template-columns:1fr}.button{width:100%;justify-content:space-between}.project-filters{gap:2px}.filter-button{padding:8px 7px;font-size:8px}.inquiry-form{padding:12px}}
+@media(orientation:landscape) and (max-height:520px) and (max-width:900px){.hero{padding-top:100px;min-height:0}.hero-visual{height:280px}.glass-nav{max-height:calc(100dvh - 100px);overflow-y:auto}}
+@supports(padding:max(0px)){.site-header{top:max(9px,env(safe-area-inset-top))}.site-footer{padding-bottom:max(47px,env(safe-area-inset-bottom))}}
