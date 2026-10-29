@@ -1,49 +1,30 @@
 # Denzi — Wellness × Technology × Creativity
 
-A responsive, static portfolio prototype with a premium obsidian/burgundy visual system, liquid-glass navigation, wellness and development divisions, status-labeled project concepts, category filters, and a consent-aware inquiry form.
+Responsive portfolio website for Denzi, built with HTML, CSS, and a small inline JavaScript enhancement layer.
 
-## Current scope
+## GitHub Pages deployment
 
-This project is designed for static hosting such as GitHub Pages. It is **not** a full-stack production CRM and has no database, login, server-side validation, secure admin dashboard, or booking engine. The form prepares an email or WhatsApp message only after a configured contact route is chosen; it does not persist submissions. Do not collect sensitive health data through this static site.
+This repository includes a GitHub Actions Pages workflow at `.github/workflows/pages.yml`.
 
-## Run locally
+1. Open **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. The workflow deploys automatically on pushes to `main`, or run it manually from **Actions → Deploy DENZI to GitHub Pages → Run workflow**.
+4. Wait for the workflow's **Deploy to GitHub Pages** job to finish successfully.
+5. The expected project site URL is **https://anmoloraon200-create.github.io/DENZI/**.
 
-Open `index.html` in a browser, or serve this directory with any static HTTP server. Google Fonts are optional; fallback system fonts are used when offline.
+## Project files
 
-## Deploy with GitHub Pages
+- `index.html` — portfolio content and inline interactions
+- `style.css` — complete stylesheet
+- `.github/workflows/pages.yml` — automatic Pages deployment
+- `robots.txt` and `sitemap.xml` — crawl metadata
 
-1. Push the contents of this directory to the root of a new public repository (for example, `denzi`).
-2. In GitHub, open **Settings → Pages**.
-3. Choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
-4. Wait for the Pages deployment workflow, then verify the URL shown in Settings → Pages.
+The homepage stylesheet path is configured to match the root-level `style.css` file. This site is static; it does not include a database, authentication, admin dashboard, or persisted inquiry form. The inquiry form explains that contact delivery is not configured and does not claim to send or save submissions. Do not submit sensitive health information.
 
-## Configure contact and links
+## Local preview
 
-Edit `js/config.js`:
+Open `index.html` in a browser or serve the repository with any static HTTP server.
 
-- `whatsappNumber`: international-format number using digits only (e.g. `919876543210`).
-- `email`: a public reply-to/contact address you control.
-- `social.instagram`, `social.linkedin`, `social.youtube`: full HTTPS profile URLs you own.
+## Next production steps
 
-Blank values are intentionally disabled. GitHub is currently linked to the account `anmoloraon200-create`; its existing `mission-fit-india` repository is a separate business website and should not be overwritten by this brand.
-
-## Moving to a real backend
-
-For the requested secure operations, use a server-capable host (e.g. Next.js on a platform that supports server routes) plus Supabase/PostgreSQL, managed authentication, Storage, strict Row Level Security, server-side Zod validation, rate limiting, and audit logging. Implement database migrations for profiles, services, leads, lead_activities, projects, posts, appointments, availability_slots, testimonials, media_assets, site_settings, and audit_logs. Use a verified email/WhatsApp provider for notices. Never expose service-role credentials in browser code.
-
-## Privacy and content integrity
-
-- The form requests consent before preparing a contact message.
-- The form explicitly asks visitors not to share sensitive health information.
-- Wellness content is general education, not medical diagnosis or treatment.
-- Portfolio entries are labeled Concept or In Progress and do not claim unverified clients, outcomes, or deployments.
-- The abstract D artwork is a replaceable placeholder, not a personal photograph.
-
-## Test checklist
-
-Manual checks recommended before publishing:
-- Narrow mobile viewport around 360px, tablet, desktop, and wide desktop.
-- Keyboard-only navigation, focus indicators, Escape to close mobile nav, reduced-motion setting.
-- Project filter buttons and active states.
-- Form required fields, email/WhatsApp validation, consent check, and unconfigured contact route messages.
-- Confirm there are no secrets or real client records in the repository.
+If you later need secure lead storage, login, booking, or admin management, add a server-side backend and authentication rather than placing secrets in browser JavaScript.
